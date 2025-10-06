@@ -38,6 +38,19 @@ This project analyzes the famous Titanic dataset to predict which passengers sur
 - **ML Algorithm**: AdaBoost Classifier
 - **Tools**: Jupyter Notebook, Kaggle
 
+## Cell breakdown
+| Cell Range | Purpose                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| 1          | **Library Imports** — importing Python packages.                                                               |
+| 2          | **Data Loading** — reading your Titanic dataset.                                                               |
+| 3–5        | **Utility / Setup code** — probably display settings, print checks, or early tests.                            |
+| 6          | **Library Imports** — additional packages (likely ML or visualization).                                        |
+| 7–8        | **Utility / Setup code** — more configuration or helper definitions.                                           |
+| 9–11       | **Data Cleaning / Feature Engineering** — handling missing data, encoding, mapping categorical variables, etc. |
+| 12–15      | **Utility / Intermediate steps** — possibly checking data shape or distributions.                              |
+| 16         | **Data Cleaning / Feature Engineering** — more transformations.                                                |
+| 17–20      | **Utility / Checks / Setup** — validation, summaries, or dataset splits.                                       |
+
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
