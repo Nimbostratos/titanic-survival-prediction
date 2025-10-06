@@ -38,4 +38,6 @@ This project analyzes the famous Titanic dataset to predict which passengers sur
 - **ML Algorithm**: AdaBoost Classifier
 - **Tools**: Jupyter Notebook, Kaggle
 
-## 📁 Project Structure
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
