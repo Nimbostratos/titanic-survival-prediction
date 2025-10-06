@@ -39,17 +39,22 @@ This project analyzes the famous Titanic dataset to predict which passengers sur
 - **Tools**: Jupyter Notebook, Kaggle
 
 ## Cell breakdown
-| Cell Range | Purpose                                                                                                        |
-| ---------- | -------------------------------------------------------------------------------------------------------------- |
-| 1          | **Library Imports** — importing Python packages.                                                               |
-| 2          | **Data Loading** — reading your Titanic dataset.                                                               |
-| 3–5        | **Utility / Setup code** — probably display settings, print checks, or early tests.                            |
-| 6          | **Library Imports** — additional packages (likely ML or visualization).                                        |
-| 7–8        | **Utility / Setup code** — more configuration or helper definitions.                                           |
-| 9–11       | **Data Cleaning / Feature Engineering** — handling missing data, encoding, mapping categorical variables, etc. |
-| 12–15      | **Utility / Intermediate steps** — possibly checking data shape or distributions.                              |
-| 16         | **Data Cleaning / Feature Engineering** — more transformations.                                                |
-| 17–20      | **Utility / Checks / Setup** — validation, summaries, or dataset splits.                                       |
+| **Cell Range** | **Section Title**                             | **Purpose and Description**                                                                                                                                                                              |
+| -------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1–2**        | **Library Importation & Data Loading**        | Imports analytical and visualization libraries (`pandas`, `numpy`, `matplotlib`, `seaborn`). Loads the Titanic dataset into a Pandas DataFrame (`combined_pd`) as the foundational dataset for analysis. |
+| **3–5**        | **Exploratory Data Overview**                 | Performs initial inspection of the dataset using `.head()`, `.info()`, and `.describe()`. Identifies data types, missing values, and provides an overview of numerical and categorical features.         |
+| **6–8**        | **Feature Engineering Setup**                 | Extracts additional information from raw data (e.g., `Title` from `Name`), defines relevant variables, and prepares the dataset for preprocessing and encoding.                                          |
+| **9–12**       | **Data Cleaning & Encoding**                  | Handles missing values (`Age`, `Fare`, `Embarked`) and applies one-hot encoding using `pd.get_dummies()` to convert categorical variables (`Sex`, `Embarked`, `Title`) into numerical form.              |
+| **13–15**      | **Feature Selection & Normalization**         | Removes non-predictive columns (e.g., `Name`, `Ticket`, `Cabin`) and ensures numerical features are normalized or standardized where necessary for model compatibility.                                  |
+| **16–18**      | **Train–Test Split**                          | Divides the dataset into training (`x_train`, `y_train`) and testing (`x_test`, `y_test`) subsets using `train_test_split()`. Confirms shapes and consistency of resulting data matrices.                |
+| **19–22**      | **Random Forest Model Training**              | Initializes and trains a `RandomForestClassifier` using the training set. Defines hyperparameters such as `n_estimators`, `max_depth`, and `criterion` for initial model fitting.                        |
+| **23–26**      | **Hyperparameter Optimization (Grid Search)** | Implements `GridSearchCV` to test multiple hyperparameter configurations. Identifies and saves the best-performing model (`best_model`) based on cross-validation accuracy.                              |
+| **27–30**      | **Model Evaluation (Random Forest)**          | Evaluates the optimized model using metrics such as accuracy, confusion matrix, precision, recall, and F1-score. Visual results are generated to validate predictive performance.                        |
+| **31–34**      | **Feature Importance Analysis**               | Extracts and visualizes the Random Forest’s `feature_importances_`. Maps encoded variable names back to readable categories (e.g., `Title=Mr`, `Sex=male`) and displays a horizontal bar chart.          |
+| **35–38**      | **AdaBoost Model Implementation**             | Introduces an `AdaBoostClassifier` for comparative analysis. Trains and evaluates it on the same dataset using identical metrics for performance benchmarking against Random Forest.                     |
+| **39–42**      | **Comparative Visualization & Results**       | Visualizes accuracy, confusion matrices, and feature importances of both models. Provides comparative insight into bias–variance balance and model robustness.                                           |
+| **43–End**     | **Final Outputs & Summary**                   | Summarizes findings, highlighting key predictive features (e.g., `Sex`, `Fare`, `Pclass`) and final model accuracies. Optionally exports results or trained models for deployment or reporting.          |
+
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
